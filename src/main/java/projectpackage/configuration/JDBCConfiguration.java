@@ -16,7 +16,7 @@ import java.util.Locale;
 
 @Configuration
 @EnableTransactionManagement
-public class JPAConfiguration implements TransactionManagementConfigurer {
+public class JDBCConfiguration implements TransactionManagementConfigurer {
 
     @Value("${dataSource.driverClassName}")
     private String driver;
@@ -27,7 +27,7 @@ public class JPAConfiguration implements TransactionManagementConfigurer {
     @Value("${dataSource.password}")
     private String password;
 
-    public JPAConfiguration() {
+    public JDBCConfiguration() {
         Locale.setDefault(Locale.ENGLISH);
     }
 
