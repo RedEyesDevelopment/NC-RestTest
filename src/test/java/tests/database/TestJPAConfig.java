@@ -114,5 +114,4 @@ public class TestJPAConfig implements TransactionManagementConfigurer {
     ModelService modelService(){
         return new ModelServiceImpl();
     }
-
 }

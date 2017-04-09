@@ -25,18 +25,17 @@ public class MainController {
     @RequestMapping(value = PREFIX + "gimme")
     public ResponseEntity getModelViaAjax() {
         Model model = modelService.getModel(1);
-        ResponseEntity resulting = new ResponseEntity(model, HttpStatus.OK);
-        return resulting;
+        ResponseEntity result = new ResponseEntity(model, HttpStatus.OK);
+        return result;
     }
 
     @ResponseBody
     @RequestMapping(value = PREFIX + "gimme", params = {"model_id"})
     public ResponseEntity getModelWithIdViaAjax(@RequestParam(value = "model_id") Integer model_id) {
-        if (null!=model_id){
             Model model = modelService.getModel(model_id);
-            ResponseEntity resulting = new ResponseEntity(model, HttpStatus.OK);
-            return resulting;
-        }
-        return new ResponseEntity(HttpStatus.BAD_REQUEST);
+            if (null!=model) {
+                ResponseEntity result = new ResponseEntity(model, HttpStatus.OK);
+                return result;
+            } else return new ResponseEntity("No model with ID="+model_id, HttpStatus.BAD_REQUEST);
     }
 }
