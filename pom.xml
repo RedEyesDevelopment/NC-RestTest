@@ -67,6 +67,14 @@
 
         <!--Custom deps-->
 
+        <!-- org.springframework.mail -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>4.3.5.RELEASE</version>
+        </dependency>
+
+
         <!--Service tool for automatic code creation(like getters/setters etc)-->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -117,12 +125,20 @@
             <version>0.2.7</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.itextpdf/itextpdf -->
+        <!-- iText for PDF -->
         <dependency>
             <groupId>com.itextpdf</groupId>
             <artifactId>itextpdf</artifactId>
             <version>5.5.10</version>
         </dependency>
+
+        <!-- JAVAX.MAIL -->
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.5.6</version>
+        </dependency>
+
 
     </dependencies>
 
