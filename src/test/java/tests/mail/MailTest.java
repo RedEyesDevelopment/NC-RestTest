@@ -1,6 +1,7 @@
 package tests.mail;
 
 import org.junit.Test;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import projectpackage.support.mail.MailTool;
 import tests.AbstractTest;
 
@@ -22,7 +23,7 @@ public class MailTest extends AbstractTest {
     @Test
     public void doTest(){
         MailTool mailTool = new MailTool();
-//        mailTool.setJavaMailSender(new JavaMailSenderImpl());
+        mailTool.setJavaMailSender(new JavaMailSenderImpl());
         mailTool.setMailSmtpHost("smtp-host-name-for-your-server(DO NOT ENTER IF YOU'RE ON GMAIL)");
         mailTool.setMailSmtpPort(587);//This port for gmail only
         Boolean setDataResult = mailTool.setMessageData("your-email", "recepient-email", "Test", "Test data text");
